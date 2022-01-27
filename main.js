@@ -1,5 +1,5 @@
 
-const button = document.getElementsByClassName("button")
+const getButton = document.getElementsByClassName("button")
 
 function getPokemon(){
   axios.get("https://pokeapi.co/api/v2/pokemon")
@@ -19,7 +19,7 @@ function getPokemon(){
   })
 }
 
-button.addEventListener("click", getPokemon);
+getButton.addEventListener("click", getPokemon);
 
 try {
   getPokemon();
