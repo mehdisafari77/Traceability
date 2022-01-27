@@ -11,6 +11,7 @@ let rollbar = new Rollbar({
 const app = express();
 app.use(express.json())
 
+app.use('/css', express.static(path.join(__dirname, '../public/styles.css')))
 app.use('/js', express.static(path.join(__dirname, '../public/main.js')))
 app.use('/axios', express.static(path.join(__dirname, "./node_modules/axios/dist/axios.min.js")))
 
@@ -26,7 +27,7 @@ app.get("/", function(req, res){
   }
 });
 
-const port = process.env.PORT || 4005;
+const port = process.env.PORT || 4000;
 
 app.use(rollbar.errorHandler())
 
