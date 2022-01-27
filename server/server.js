@@ -11,12 +11,12 @@ let rollbar = new Rollbar({
 const app = express();
 app.use(express.json())
 
-app.use('/css', express.static(path.join(__dirname, './styles.css')))
-app.use('/js', express.static(path.join(__dirname, './main.js')))
-app.use('/axios', express.static(path.join(__dirname, "./node_modules/axios/dist/axios.min.js")))
+app.use('/css', express.static(path.join(__dirname, '../public/styles.css')))
+app.use('/js', express.static(path.join(__dirname, '../public/main.js')))
+app.use('/axios', express.static(path.join(__dirname, "../node_modules/axios/dist/axios.min.js")))
 
 app.get("/", function(req, res){
-  res.sendFile(path.join(__dirname, "./index.html"));
+  res.sendFile(path.join(__dirname, "../public/index.html"));
 
   rollbar.info('HTML file served successfully.')
   
